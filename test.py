@@ -1,5 +1,5 @@
 from mininet.net import Mininet
-from mininet.node import Controller, OVSSwitch
+from mininet.node import OVSSwitch, Controller
 from mininet.cli import CLI
 
 def create_and_run_topology(topo, controller=None):
