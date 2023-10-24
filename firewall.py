@@ -3,7 +3,7 @@ from pox.lib.addresses import IPAddr, EthAddr
 import pox.openflow.libopenflow_01 as of
 import os
 
-class Switch(object):
+class Switch:
     def __init__(self, connection):
         self.connection = connection
         self.macToPort = {}
@@ -36,9 +36,8 @@ class Switch(object):
             msg.data = event.ofp
             self.connection.send(msg)
 
-@core.openflow_handler
 def _handle_ConnectionUp(event):
-    policyFile = "firewall-mac-policies.csv"
+    policyFile = "%s/pox/pox/forwarding/firewall-mac-policies.csv" % os.environ['HOME']
     rules_file = open(policyFile, "r")
     rules = [rule.strip() for rule in rules_file]
     for i in range(len(rules)):
