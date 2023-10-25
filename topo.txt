@@ -1,0 +1,26 @@
+git clone https://github.com/mininet/mininet
+install.sh -h
+
+sudo mn 
+nodes
+
+sudo mn --topo single,3
+nodes
+
+ping all
+
+linear -->
+sudo mn --topo linear,3
+nodes
+net
+pingall
+
+tree --> 
+sudo mn --topo tree,3
+links
+net
+pingall
+
+python -->
+curl 
+sudo python testing.py

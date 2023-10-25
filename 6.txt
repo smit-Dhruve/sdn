@@ -1,0 +1,11 @@
+ssh -Y mininet@IP
+
+sudo mn --mac --topo single,4 --controller none
+h1 ping h2
+cat firewall.csv
+
+mn --mac --topo single,4 --controller none
+
+./pox.py ved
+h1 ping -c2 h
+ovs-ofctl dump-flows s1
